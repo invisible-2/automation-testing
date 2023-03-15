@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Practice Suite">
+    <test name="Test Basics 1" parallel = "classes" thread-count="1">
+        <groups>
+            <dependencies>
+                <group name="g2" depends-on="g1"></group>
+                <group name="g3" depends-on="g2"></group>
+                <group name="g4" depends-on="g3"></group>
+                <group name="g5" depends-on="g4"></group>
+                <group name="g6" depends-on="g5"></group>
+                <group name="b1" depends-on="g6"></group>
+                <group name="b2" depends-on="b1"></group>
+                <group name="b3" depends-on="b2"></group>
+                <group name="b4" depends-on="b3"></group>
+                <group name="b5" depends-on="b4"></group>
+                <group name="b6" depends-on="b5"></group>
+            </dependencies>
+        </groups>
+        <packages>
+            <package name="org.example.tests.books" />
+
+        </packages>
+    </test>
+
+</suite>
